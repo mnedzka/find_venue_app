@@ -2,19 +2,21 @@ import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
+import MyButton from "../utils/MyButton";
+
 class Discount extends Component {
   state = {
     discountStart: 0,
-    discountEnd: 0
+    discountEnd: 30
   };
 
-  porcentage() {
+  porcentage = () => {
     if (this.state.discountStart < this.state.discountEnd) {
       this.setState({
         discountStart: this.state.discountStart + 1
       });
     }
-  }
+  };
 
   componentDidUpdate() {
     setTimeout(() => {
@@ -29,7 +31,7 @@ class Discount extends Component {
           <Fade onReveal={() => this.porcentage()}>
             <div className="discount_porcentage">
               <span>{this.state.discountStart}%</span>
-              <span>oFF</span>
+              <span>OFF</span>
             </div>
           </Fade>
           <Slide right>
@@ -42,7 +44,12 @@ class Discount extends Component {
                 exercitationem, rem dolore placeat rerum laboriosam dolorum!
               </p>
 
-              <div>button</div>
+              <MyButton
+                text="Purchase tickets"
+                bck="#ffa800"
+                color="#ffffff"
+                link="www.google.com"
+              />
             </div>
           </Slide>
         </div>
