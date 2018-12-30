@@ -15,29 +15,28 @@ class Pricing extends Component {
     delay: [500, 0, 500]
   };
 
-  showBoxes = () => (
-    <Zoom delay={this.UNSAFE_componentWillMount.state.delay[i]} key={i}>
-      this.state.prices.map((price, i) => (
-      <div className="pricing_item">
-        <div className="pricing_inner_wrapper">
-          <div className="pricing_title">
-            <span>${this.state.prices[i]}</span>
-            <span>${this.state.positions[i]}</span>
-          </div>
-          <div className="pricing_description">{this.state.desc[i]}</div>
-          <div className="pricing_buttons">
-            <MyButton
-              text="Purchase"
-              bck="#ffa800"
-              color="#ffffff"
-              link={this.state.linkTo[i]}
-            />
+  showBoxes = () =>
+    this.state.prices.map((price, i) => (
+      <Zoom delay={this.state.delay[i]} key={i}>
+        <div className="pricing_item">
+          <div className="pricing_inner_wrapper">
+            <div className="pricing_title">
+              <span>${this.state.prices[i]}</span>
+              <span>${this.state.positions[i]}</span>
+            </div>
+            <div className="pricing_description">{this.state.desc[i]}</div>
+            <div className="pricing_buttons">
+              <MyButton
+                text="Purchase"
+                bck="#ffa800"
+                color="#ffffff"
+                link={this.state.linkTo[i]}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      ));
-    </Zoom>
-  );
+      </Zoom>
+    ));
 
   render() {
     return (
