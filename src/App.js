@@ -6,19 +6,20 @@ import Featured from "./components/featured";
 import VenueNFO from "./components/venueNFO";
 import Highlights from "./components/Highlights";
 import Pricing from "./components/pricing";
+import Location from "./components/location";
+import Footer from "./components/header_footer/Footer";
 
 class App extends Component {
   render() {
     return (
-      <div
-        className="App"
-        // style={{ height: "1500px", background: "cornflowerblue" }}
-      >
+      <div className="App">
         <Header />
         <Featured />
         <VenueNFO />
         <Highlights />
         <Pricing />
+        <Location />
+        <Footer />
       </div>
     );
   }
